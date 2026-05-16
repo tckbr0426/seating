@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두근두근 학생 추첨기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 두근두근 번호 추첨기 🎉</h1>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <label for="totalStudents">전체 학생 수 (끝 번호):</label>
+                <input type="number" id="totalStudents" min="1" placeholder="예: 30" value="30">
+            </div>
+            
+            <div class="input-group">
+                <label for="pickCount">뽑을 학생 수:</label>
+                <input type="number" id="pickCount" min="1" placeholder="예: 3" value="1">
+            </div>
+        </div>
+
+        <button id="drawBtn">추첨하기!</button>
+        
+        <div id="resultArea" class="result-area">
+            <p id="resultText">버튼을 눌러 추첨을 시작하세요!</p>
+        </div>
+    </div>
+
+    <audio id="celebrationSound" src="https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
