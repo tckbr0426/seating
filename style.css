@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.input-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 45%;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #4CAF50;
+}
+
+button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.1s, background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:hover {
+    background-color: #ff5252;
+}
+
+.result-area {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff9c4;
+    border-radius: 15px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resultText {
+    font-size: 24px;
+    color: #333;
+    word-break: keep-all;
+}
+
+/* 추첨 결과가 나올 때 튕기는 애니메이션 */
+.pop-animation {
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.highlight {
+    color: #e53935;
+    font-size: 36px;
+    font-weight: bold;
+}
