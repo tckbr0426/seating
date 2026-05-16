@@ -1,3 +1,6 @@
+/* 귀엽고 통통 튀는 무료 한글 폰트 적용 (Jua 폰트) */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,113 +8,165 @@
 }
 
 body {
-    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
-    background-color: #f0f8ff;
+    font-family: 'Jua', 'Malgun Gothic', sans-serif;
+    /* 화려하게 움직이는 그라데이션 배경 */
+    background: linear-gradient(-45deg, #ff9a9e, #fecfef, #a1c4fd, #c2e9fb);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .container {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 30px;
+    /* 입체적이고 화려한 그림자 효과 */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 
+                0 0 20px rgba(255, 105, 180, 0.4);
     text-align: center;
     width: 90%;
-    max-width: 500px;
+    max-width: 550px;
+    border: 4px solid #fff;
 }
 
 h1 {
-    color: #333;
+    font-size: 38px;
     margin-bottom: 30px;
-    font-size: 28px;
+    /* 글자에 그라데이션 색상 입히기 */
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(255, 75, 43, 0.2);
+    letter-spacing: 1px;
 }
 
 .input-section {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.05);
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
     text-align: left;
-    width: 45%;
+    width: 48%;
 }
 
 label {
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 8px;
+    font-size: 18px;
+    color: #495057;
+    margin-bottom: 10px;
 }
 
 input {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
+    padding: 12px;
+    font-size: 20px;
+    font-family: 'Jua', sans-serif;
+    text-align: center;
+    border: 3px solid #dee2e6;
+    border-radius: 12px;
     outline: none;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    background-color: #fff;
 }
 
 input:focus {
-    border-color: #4CAF50;
+    border-color: #ff416c;
+    box-shadow: 0 0 10px rgba(255, 65, 108, 0.3);
+    transform: scale(1.05);
 }
 
+/* 3D 아케이드 버튼 스타일 */
 button {
-    background-color: #ff6b6b;
+    background: linear-gradient(135deg, #11998e, #38ef7d);
     color: white;
     border: none;
-    padding: 15px 30px;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 10px;
+    padding: 18px 30px;
+    font-size: 26px;
+    font-family: 'Jua', sans-serif;
+    border-radius: 15px;
     cursor: pointer;
     width: 100%;
-    transition: transform 0.1s, background-color 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.1s ease;
+    box-shadow: 0 8px 0 #0f7a71, 0 15px 20px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 button:active {
-    transform: scale(0.95);
+    transform: translateY(8px);
+    box-shadow: 0 0px 0 #0f7a71, 0 5px 10px rgba(0,0,0,0.2);
 }
 
 button:hover {
-    background-color: #ff5252;
+    filter: brightness(1.1);
+}
+
+button:disabled {
+    background: #ccc;
+    box-shadow: 0 8px 0 #999;
+    cursor: not-allowed;
 }
 
 .result-area {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #fff9c4;
-    border-radius: 15px;
-    min-height: 100px;
+    margin-top: 35px;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #fff9c4, #ffecb3);
+    border-radius: 20px;
+    min-height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 3px dashed #ffb300;
+    box-shadow: 0 5px 15px rgba(255, 179, 0, 0.2);
 }
 
 #resultText {
-    font-size: 24px;
-    color: #333;
+    font-size: 28px;
+    color: #424242;
     word-break: keep-all;
+    line-height: 1.4;
 }
 
-/* 추첨 결과가 나올 때 튕기는 애니메이션 */
+/* 결과 강조 애니메이션 */
 .pop-animation {
-    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 @keyframes popIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+    0% { transform: scale(0.3) translateY(20px); opacity: 0; }
+    50% { transform: scale(1.1) translateY(-10px); }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
 }
 
+/* 당첨 번호 네온사인 효과 */
 .highlight {
-    color: #e53935;
-    font-size: 36px;
-    font-weight: bold;
+    color: #fff;
+    font-size: 48px;
+    background-color: #ff3d00;
+    padding: 5px 15px;
+    border-radius: 15px;
+    display: inline-block;
+    margin: 0 10px;
+    box-shadow: 0 0 15px #ff3d00, 0 0 30px #ff3d00;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); box-shadow: 0 0 10px #ff3d00, 0 0 20px #ff3d00; }
+    to { transform: scale(1.1); box-shadow: 0 0 20px #ff3d00, 0 0 40px #ff3d00; }
 }
